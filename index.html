@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAZ A BOA</title>
+    <style>
+        .painel {
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            margin: auto;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 30px;
+            font-family: 'Franklin Gothic Medium', sans-serif;
+        }
+
+        .img {
+            width: 250px;
+            height: 250px;
+            margin: auto;
+            display: block;
+        }
+
+        #nao {
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: black;
+            border: white;
+            border-radius: 10px;
+            color: white;
+            margin-top: 100px;
+        }
+
+        #sim {
+            margin-left: -55px;
+            margin-right: 10px;
+            margin-top: 100px;
+            height: 40px;
+            width: 60px;
+            background-color: black;
+            border: white;
+            border-radius: 10px;
+            color: white;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #161616, #016ab1);
+    /* Adapte as cores e a direção do degradê conforme necessário */
+    margin: 0; /* Remove a margem padrão do corpo */
+    padding: 0; /* Remove o preenchimento padrão do corpo */
+    height: 100vh; /* Garante que o degradê cobre toda a altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h1>Cuzinho hoje?</h1>
+        <img src="C:\Users\Mary Jc\OneDrive\Área de Trabalho\js\318877126_1225936324677547_5099842263369745367_n-removebg-preview (1).png" class="img">
+       <a href="https://www.youtube.com/watch?v=Y7S96nA7NE4"> <button id="sim">Sim!</button></a>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+    </div>
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao");
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+</body>
+</html>
